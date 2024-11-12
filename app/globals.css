@@ -1,1 +1,7 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Matemasie&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Sour Gummy";
+  background: url("https://i.pinimg.com/564x/b0/13/5b/b0135bc4599b96645b2f575c867ac6d5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

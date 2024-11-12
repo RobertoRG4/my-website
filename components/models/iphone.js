@@ -6,7 +6,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/model/scene-transformed.glb");
+  const { nodes, materials } = useGLTF("/iphone/scene-transformed.glb");
 
   const backgroundTexture = useTexture("/imagen.png");
 
@@ -142,4 +142,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/model/scene-transformed.glb");
+useGLTF.preload("/iphone/scene-transformed.glb");
