@@ -1,24 +1,35 @@
+"use client";
 import Island from "@/components/models/island";
 import RenderIsland from "@/components/models/renderIsland";
-import { Box, Container, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Text } from "@chakra-ui/react";
 
 export default function Home() {
+  const [fov, setFov] = useState(80);
+  const textOpacity = Math.max(0, (fov - 10) / 70);
+
+  const handleZoomChange = (newFov: number) => {
+    setFov(newFov);
+  };
   return (
-    <Container
+    <Box
       position="relative"
       zIndex={2}
       display="flex"
       justifyContent="center"
-      as="main"
+      width="100%"
+      height="100vh"
+      overflow="hidden"
     >
       <Text
         marginTop="6%"
         as="h1"
-        position="relative"
+        position="absolute"
         fontSize="100px"
         zIndex={2}
         color="#fff"
         fontWeight="bold"
+        style={{ opacity: textOpacity }}
       >
         Welcome to my website.
       </Text>
@@ -27,13 +38,13 @@ export default function Home() {
         top="0"
         left="0"
         width="100%"
-        height="100vh"
+        height="100%"
         zIndex={1}
       >
-        <RenderIsland>
+        <RenderIsland onZoomChange={handleZoomChange}>
           <Island />
         </RenderIsland>
       </Box>
-    </Container>
+    </Box>
   );
 }
